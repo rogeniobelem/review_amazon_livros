@@ -2,7 +2,7 @@
 
 Review dos 100 livros mais vendidos da Amazon
 
-# Requirements
+## Requirements
 
 + streamlit
 + plotly

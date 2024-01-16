@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 st.set_page_config(layout="wide")
 
@@ -14,3 +15,11 @@ preco_ate = st.sidebar.slider(
 
 df_books = df_top_100_books[df_top_100_books["book price"] <= preco_ate]
 st.write(df_books)
+
+# Gráficos
+col1, col2 = st.columns(2)
+fig = px.bar(df_books["year of publication"].value_counts())
+fig2 = px.histogram(df_books["book price"])
+col1.plotly_chart(fig)
+col2.plotly_chart(fig2)
+
